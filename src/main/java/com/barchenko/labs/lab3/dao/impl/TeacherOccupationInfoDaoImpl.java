@@ -99,10 +99,6 @@ public class TeacherOccupationInfoDaoImpl extends AbstractJdbcDao implements Tea
                 occupationDao.removeOccupation(connection, oc);
                 occupationDao.creteOccupation(connection, oc);
             }
-//        weekDays.forEach(wd -> occupationList.add(occupationDao.findOccupationByWeekDay(connection, wd.getValue()).get()));
-//        occupationList.forEach(o -> occupationDao.removeOccupation(connection, o));
-//        occupationList.forEach(o -> occupationDao.creteOccupation(connection, o));
-
         connection.commit();
         } catch (SQLException ex) {
             try {
