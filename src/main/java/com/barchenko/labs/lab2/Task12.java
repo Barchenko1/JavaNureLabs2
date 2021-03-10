@@ -7,11 +7,17 @@ import java.util.Scanner;
 public class Task12 {
     public static void main(String[] args)
     {
-        Map<Integer, Integer> d = new HashMap<>();
-        Scanner f = new Scanner(System.in);
-        System.out.print("Степень многочлена n= ");
-        int n = f.nextInt();
-        System.out.print("D(x)= c0 ");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Степень многочленов n = ");
+        int n = scanner.nextInt();
+        Map<Integer, Integer> firstMap = setUpFirstMap(scanner, n);
+        Map<Integer, Integer> secondMap = setUpSecondMap(scanner, n);
+        Map<Integer, Integer> resultMap = calculateMap(firstMap, secondMap, n);
+    }
+
+    private static Map<Integer, Integer> setUpFirstMap(Scanner scanner, int n) {
+        Map<Integer, Integer> map = new HashMap<>();
+        System.out.print("D(x)= c0");
         for(int i=1; i <= n; i++)
         {
             System.out.print(" + c" + i + "*x^" + i);
@@ -20,15 +26,19 @@ public class Task12 {
         for(int i = 0; i <= n; i++)
         {
             System.out.print("c" + i + "=");
-            d.put(i, f.nextInt());
+            map.put(i, scanner.nextInt());
         }
-        System.out.print("D(x)= " + d.get(0));
+        System.out.print("D(x)= " + map.get(0));
         for(int i = 1; i <= n; i++){
-            System.out.print(" + " + d.get(i) + "x^"+i);
+            System.out.print(" + " + map.get(i) + "x^"+i);
         }
         System.out.println();
-        Map<Integer, Integer> e = new HashMap<>();
-        System.out.print("E(x)= a0 ");
+        return map;
+    }
+
+    private static Map<Integer, Integer> setUpSecondMap(Scanner scanner, int n) {
+        Map<Integer, Integer> secondMap = new HashMap<>();
+        System.out.print("E(x)= a0");
         for(int i = 1; i <= n; i++)
         {
             System.out.print(" + a" + i +"*x^" + i);
@@ -37,21 +47,26 @@ public class Task12 {
         for(int i = 0; i <= n; i++)
         {
             System.out.print("a" + i + "=");
-            e.put(i, f.nextInt());
+            secondMap.put(i, scanner.nextInt());
         }
-        System.out.print("E(x)= " + e.get(0));
+        System.out.print("E(x)= " + secondMap.get(0));
         for(int i = 1; i <= n; i++)
         {
-            System.out.print(" + " + e.get(i) + "x^" + i);
+            System.out.print(" + " + secondMap.get(i) + "x^" + i);
         }
         System.out.println();
-        Map<Integer, Integer> h = new HashMap<>();
-        h.put(0, d.get(0) + e.get(0));
-        System.out.print("D(x)+E(x)= " + h.get(0));
+        return secondMap;
+    }
+
+    private static Map<Integer, Integer> calculateMap(Map<Integer, Integer> map1, Map<Integer,Integer> map2, int n) {
+        Map<Integer, Integer> resultMap = new HashMap<>();
+        resultMap.put(0, map1.get(0) + map2.get(0));
+        System.out.print("D(x)+E(x)= " + resultMap.get(0));
         for(int i = 1; i <= n; i++)
         {
-            h.put(i, d.get(i)+e.get(i));
-            System.out.print(" + "+h.get(i)+"x^"+i);
+            resultMap.put(i, map1.get(i) + map2.get(i));
+            System.out.print(" + "+ resultMap.get(i)+"x^"+i);
         }
+        return resultMap;
     }
 }
