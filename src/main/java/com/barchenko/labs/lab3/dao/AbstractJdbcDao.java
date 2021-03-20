@@ -6,6 +6,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
 import java.sql.*;
 import java.util.ResourceBundle;
 
+//абстрактный класс (скелетон) для хранения общих методов(конекшен к бд, кредов и данных по бд, закрытие коннекшенов)
 public abstract class AbstractJdbcDao {
 
     private BasicDataSource ds;

@@ -1,6 +1,6 @@
 package com.barchenko.labs.lab3.entity;
 
-
+//Сущьность таблицы предмета
 public class Occupation {
     private long id;
     private String name;

@@ -1,5 +1,6 @@
 package com.barchenko.labs.lab3.entity;
 
+//энам для дней недели
 public enum WeekDay {
     SUNDAY("sunday"),
     MONDAY("monday"),

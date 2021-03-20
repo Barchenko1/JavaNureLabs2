@@ -23,32 +23,35 @@ public class TextEditor implements ActionListener {
         });
     }
 
+    //конструктор для создания редактора
     public TextEditor() {
         frame.setSize(800, 600);
         frame.setVisible(true);
 
+        //создание кнопки открытия файла
         buttonOpen.setLocation(10,10);
         buttonOpen.setSize(80,20);
         openButtonListener();
-
+        //создание кнопки сохранения файла
         buttonSave.setLocation(120,10);
         buttonSave.setSize(80,20);
         saveButtonListener();
-
+        //создание кнопки нового файла
         buttonNew.setLocation(230,10);
         buttonNew.setSize(100,20);
         newFileButtonListener();
 
         area.setLocation(50, 70);
         area.setSize(500, 200);
-
+        //создание окна с кнопками
         frame.add(buttonOpen);
         frame.add(buttonSave);
         frame.add(buttonNew);
         frame.add(area);
-        frame.add(new JLabel());
+        frame.add(new JLabel("редактор текста"));
     }
 
+    //метод для оброботки открытия файла
     private void openButtonListener() {
         buttonOpen.addActionListener(new ActionListener() {
             @Override
@@ -69,6 +72,7 @@ public class TextEditor implements ActionListener {
         });
     }
 
+    //метод для оброботки сохранения файла
     private void saveButtonListener() {
         buttonSave.addActionListener(new ActionListener() {
             @Override
@@ -84,6 +88,7 @@ public class TextEditor implements ActionListener {
         });
     }
 
+    //метод для оброботки создания нового файла
     private void newFileButtonListener() {
         buttonNew.addActionListener(new ActionListener() {
             @Override

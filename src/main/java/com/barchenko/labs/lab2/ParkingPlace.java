@@ -16,6 +16,7 @@ public class ParkingPlace {
         this.numberOfFreePlaces = numberOfPlaces;
     }
 
+    //создание парковки
     public static void setUpParkingPlace() {
         Scanner sc = new Scanner(System.in);
         do {
@@ -28,6 +29,7 @@ public class ParkingPlace {
         } while (numberOfPlaces <= 0);
     }
 
+    //метод для занимания места на парковке
     public void takeThePlace() {
         for (int i = 0; i <= arrayListStation.size() - 1; i++) {
             if (this.numberOfFreePlaces > 0) {
@@ -45,6 +47,7 @@ public class ParkingPlace {
         }
     }
 
+    //метод для освобождения места на порковке
     public void leaveThePlace(int parkingPlace) {
         arrayListStation.set(parkingPlace, "Место свободно");
         this.numberOfFreePlaces++;

@@ -9,6 +9,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Task14 {
+    //демострация работы программы
     public static void main(String[] args) {
         File file = new File("fileTask13.txt");
         List<String> list = toListElement(listFromFile(file));
@@ -18,6 +19,7 @@ public class Task14 {
         System.out.println(map);
     }
 
+    //фильтрация слов из файла
     private static List<String> listFromFile(File file) {
         List<String> list = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
@@ -34,6 +36,7 @@ public class Task14 {
         return list;
     }
 
+    //подсчет количества слов в файле
     private static List<String> toListElement(List<String> list) {
         List<String> newList = new ArrayList<>();
         list.forEach(line -> {

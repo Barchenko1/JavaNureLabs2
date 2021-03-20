@@ -1,10 +1,5 @@
 package com.barchenko.labs.lab2;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
-
 public class Task23 {
     public static void main(String[] args) {
 

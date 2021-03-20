@@ -1,6 +1,7 @@
 package com.barchenko.labs.lab3.query;
 
-public class Constants {
+//утилитарный класс для хранения sql запросов
+public final class Constants {
 
     public static final String FIND_TEACHERS_BY_WEEKDAY_AND_ROOM = "SELECT teacher.first_name, teacher.middle_name, teacher.last_name, teacher.lessons_count, teacher.students_count," +
             "occupation.name, occupation.weekDay, occupation.room\n" +

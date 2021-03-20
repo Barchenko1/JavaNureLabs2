@@ -11,6 +11,7 @@ import java.util.List;
 
 public class Main {
 
+//    метод для демонстрации работы программы
     public static void main(String[] args) {
         TeacherOccupationInfoDao teacherOccupationInfoDao = new TeacherOccupationInfoDaoImpl();
         System.out.println(teacherOccupationInfoDao.findTeachersByWeekDayAndRoomNumber("friday", 111));

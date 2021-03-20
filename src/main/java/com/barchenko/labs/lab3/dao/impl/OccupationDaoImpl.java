@@ -13,8 +13,10 @@ import java.util.Optional;
 
 import static com.barchenko.labs.lab3.query.Constants.*;
 
+//реализация интерфейса для работы с таблицей occupation
 public class OccupationDaoImpl extends AbstractJdbcDao implements OccupationDao {
 
+//    метод для нахождения всех предметов
     @Override
     public Optional<List<Occupation>> findAllOccupation() {
         Connection con = null;
@@ -44,6 +46,7 @@ public class OccupationDaoImpl extends AbstractJdbcDao implements OccupationDao 
         return Optional.of(occupationList);
     }
 
+//    метод для нахождения предмета по дню недели
     @Override
     public Optional<Occupation> findOccupationByWeekDay(Connection connection, String weekDay) throws SQLException {
         EntityMapper<Occupation> occupationMapper = new OccupationMapper();
@@ -58,6 +61,7 @@ public class OccupationDaoImpl extends AbstractJdbcDao implements OccupationDao 
         return Optional.of(occupation);
     }
 
+    //    метод для удаления предмета
     @Override
     public void removeOccupation(Connection connection, Occupation occupation) throws SQLException {
         PreparedStatement ps = connection.prepareStatement(SQL_OCCUPATION_REMOVE);
@@ -66,6 +70,7 @@ public class OccupationDaoImpl extends AbstractJdbcDao implements OccupationDao 
         closeResource(null, ps, null, null);
     }
 
+    //    метод для создания предмета
     @Override
     public void creteOccupation(Connection connection, Occupation occupation) throws SQLException {
         PreparedStatement ps = connection.prepareStatement(CREATE_OCCUPATION_UPDATE);

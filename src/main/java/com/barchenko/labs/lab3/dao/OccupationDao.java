@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
+//интерфейс для определения методов работы с таблицей occupation
 public interface OccupationDao {
     Optional<List<Occupation>> findAllOccupation();
     Optional<Occupation> findOccupationByWeekDay(Connection connection, String weekDay) throws SQLException;

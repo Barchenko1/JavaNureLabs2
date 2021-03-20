@@ -2,6 +2,7 @@ package com.barchenko.labs.lab3.entity;
 
 import java.util.List;
 
+//сущьность таблицы учитель
 public class Teacher {
     private long id;
     private String first_name;

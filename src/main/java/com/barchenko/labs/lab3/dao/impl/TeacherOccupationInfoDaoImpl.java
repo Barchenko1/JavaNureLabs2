@@ -20,8 +20,10 @@ import java.util.stream.Collectors;
 import static com.barchenko.labs.lab3.query.Constants.FIND_TEACHERS_BY_WEEKDAY_AND_ROOM;
 import static com.barchenko.labs.lab3.query.Constants.FIND_WEEKDAYS_BY_ROOMS_COUNT;
 
+//реализация интерфейса для работы с таблицей teacher
 public class TeacherOccupationInfoDaoImpl extends AbstractJdbcDao implements TeacherOccupationInfoDao {
 
+//    метод для нахождения учителя по дню недели и номеру комнаты
     @Override
     public Optional<List<TeacherOccupationDto>> findTeachersByWeekDayAndRoomNumber(String weekDay, int roomNumber) {
         Connection connection = null;
@@ -53,6 +55,7 @@ public class TeacherOccupationInfoDaoImpl extends AbstractJdbcDao implements Tea
         return Optional.of(teacherOccupationDtoList);
     }
 
+    //    метод для нахождения учителя по количеству дней
     @Override
     public Optional<List<OccupationCounterDto>> findWeekDayByCounter(int count) {
         Connection connection = null;
@@ -84,6 +87,7 @@ public class TeacherOccupationInfoDaoImpl extends AbstractJdbcDao implements Tea
         return Optional.of(teacherOccupationDtoList);
     }
 
+    //    метод для удаления первого предмета по дню недели и добавление в конец таблицы
     @Override
     public void updateTeacherOccupationDto(List<WeekDay> weekDays) {
         OccupationDao occupationDao = new OccupationDaoImpl();

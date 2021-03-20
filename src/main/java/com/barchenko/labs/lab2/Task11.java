@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Task11 {
     public static void main(String[] args) {
+        //демострация работы сортировки слов из файла
         List<String> list = new ArrayList<>();
         File file = new File("file.txt");
         try (BufferedReader reader = new BufferedReader(new FileReader(file))){

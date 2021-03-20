@@ -2,6 +2,7 @@ package com.barchenko.labs.lab3.dto;
 
 import com.barchenko.labs.lab3.entity.WeekDay;
 
+//обьект для мапинга запросов с джоином
 public class TeacherOccupationDto {
     private String first_name;
     private String middle_name;

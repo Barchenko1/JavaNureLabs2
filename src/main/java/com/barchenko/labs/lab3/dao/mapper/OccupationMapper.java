@@ -7,6 +7,7 @@ import com.barchenko.labs.lab3.entity.WeekDay;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+//реализация интерфейса для мапинга полей с бд в java class
 public class OccupationMapper implements EntityMapper<Occupation> {
 
     @Override

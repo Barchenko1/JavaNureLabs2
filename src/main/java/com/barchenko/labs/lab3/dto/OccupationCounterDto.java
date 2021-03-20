@@ -2,6 +2,7 @@ package com.barchenko.labs.lab3.dto;
 
 import com.barchenko.labs.lab3.entity.WeekDay;
 
+//обьект для мапинга запросов с джоином
 public class OccupationCounterDto {
     private WeekDay weekDay;
     private int counter;
