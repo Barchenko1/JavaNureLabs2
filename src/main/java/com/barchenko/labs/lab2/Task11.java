@@ -2,7 +2,7 @@ package com.barchenko.labs.lab2;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Comparator;
+import java.util.Collections;
 import java.util.List;
 
 public class Task11 {
@@ -19,7 +19,7 @@ public class Task11 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        list.sort(Comparator.reverseOrder());
+        Collections.sort(list);
         list.forEach(System.out::println);
     }
 }
